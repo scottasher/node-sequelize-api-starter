@@ -3,16 +3,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const { User } = require('../db');
 const { isValidPassword } = require('../utils');
 
-// passport.serializeUser((user, cb) => {
-//     cb(err, user)
-// });
-
-// passport.deserializeUser((user, cb) => {
-//     User.findOne({where: {id: id}}).then(user => {
-//         cb(err, user)
-//     })
-// });
-
 passport.use(new LocalStrategy({
     usernameField: 'user[email]',
     passwordField: 'user[password]',
